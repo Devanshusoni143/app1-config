@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: frontend-smoke-test
+  namespace: app1-ns
+  annotations:
+    argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: test
+        image: curlimages/curl
+        command:
+          - sh
+          - -c
+          - |
+            echo "Running frontend smoke test..."
+            curl -f http://frontend-svc:80
