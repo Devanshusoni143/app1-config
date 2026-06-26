@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: db-migration-v1-0-1       # bump this version on each release: v1-1-0, v1-2-0 etc.
+  name: db-migration-v1-0-0       # bump this version on each release: v1-1-0, v1-2-0 etc.
   namespace: production
   annotations:
     argocd.argoproj.io/sync-wave: "2"
