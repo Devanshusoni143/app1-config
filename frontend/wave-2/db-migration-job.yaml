@@ -44,5 +44,7 @@ spec:
             - |
               echo "Running database migrations..."
               sleep 5
-              echo "Migration complete successfully"
+              echo "Something went wrong...."
               exit 1
+              echo "Migration complete successfully"
+              exit 0
