@@ -1,18 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app1-fe-app
+  name: sync-wave-demo
   namespace: argocd
 spec:
-  project: app1-project
+  project: default
   source:
     repoURL: https://github.com/Devanshusoni143/app1-config.git
     targetRevision: HEAD
     path: frontend
   destination:
     server: https://kubernetes.default.svc
-    namespace: app1-ns
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
+    namespace: production
